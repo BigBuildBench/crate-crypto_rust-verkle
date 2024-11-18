@@ -1,0 +1,22 @@
+[package]
+name = "banderwagon"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dev-dependencies]
+hex = "0.4.3"
+criterion = "0.5.1"
+rand = "0.8.4"
+sha3 = "0.10.8"
+
+[features]
+default = ["parallel"]
+parallel = ["ark-ff/parallel", "ark-ff/asm", "ark-ec/parallel"]
+
+[[bench]]
+name = "benchmark"
+harness = false
